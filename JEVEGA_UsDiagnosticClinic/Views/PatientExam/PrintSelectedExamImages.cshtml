@@ -1,0 +1,367 @@
+﻿@model JEVEGA_UsDiagnosticClinic.PatientExam
+
+@{
+    ViewBag.Title = "PrintExamImages";
+    Layout = "~/Views/Shared/Layout_print_image.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.Id)
+
+<div>
+
+    <table class="table_clinic">
+        <tr><td colspan="4"><div class="line_space"></div></td></tr>
+        <tr>
+            <td><span class="report_fieldvalue_01">@Html.LabelFor(model => model.ExamDate)</span></td>
+            <td>
+                <span class="report_fieldvalue_01">@Html.DisplayFor(model => model.formattedExamDate)</span>
+            </td>
+            <td><span class="report_fieldvalue_01">@Html.LabelFor(model => model.ExamId)</span></td>
+            <td><span class="report_fieldvalue_01">@Html.DisplayFor(model => model.ExamId)</span></td>
+        </tr>
+        <tr><td colspan="4"><div class="line_space"></div></td></tr>
+        <tr>
+            <td><span class="report_fieldvalue_01">@Html.LabelFor(model => model.PatientID)</span></td>
+            <td><span class="report_fieldvalue_01">@Html.DisplayFor(model => model.getPatientIdName)</span></td>
+
+            <td><span class="report_fieldvalue_01">@Html.LabelFor(model => model.ExamType)</span></td>
+            <td><span class="report_fieldvalue_01">@Html.DisplayFor(model => model.getExamName)</span></td>
+        </tr>
+
+        <tr><td colspan="4"><div class="line_space"></div></td></tr>
+    </table>
+    
+    <div class="line_space"></div>
+    @{ 
+        string[] examSelectedImages = ViewBag.ExamImageList;
+        int exam_img_count = ViewBag.ExamImageCount;
+    }
+    <table class="table_clinic">
+
+        <tr>
+            <td>
+                @if (examSelectedImages[0] != null)
+                {
+                    <table class="table">
+                        <tr>
+                            <td><img src="~/ExamImages/@examSelectedImages[0]" class="scan_image" /></td>
+                        </tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[1] != null)
+                {
+                    <table class="table">
+                        <tr>
+                            <td><img src="~/ExamImages/@examSelectedImages[1]" class="scan_image" /></td>
+                        </tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[2] != null)
+                {
+                    <table class="table">
+                        <tr>
+                            <td><img src="~/ExamImages/@examSelectedImages[2]" class="scan_image" /></td>
+                        </tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[3] != null)
+                {
+                    <table class="table">
+                        <tr>
+                            <td><img src="~/ExamImages/@examSelectedImages[3]" class="scan_image" /></td>
+                        </tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[4] != null)
+                {
+                    <table class="table">
+                        <tr>
+                            <td><img src="~/ExamImages/@examSelectedImages[4]" class="scan_image" /></td>
+                        </tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[5] != null)
+                {
+                    <table class="table">
+                        <tr>
+                            <td><img src="~/ExamImages/@examSelectedImages[5]" class="scan_image" /></td>
+                        </tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[6] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[6]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[7] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[7]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[8] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[8]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[9] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[9]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[10] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[10]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[11] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[11]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[12] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[12]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[13] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[13]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[14] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[14]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[15] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[15]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[16] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[16]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[17] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[17]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[18] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[18]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[19] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[19]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[20] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[20]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[21] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[21]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[22] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[22]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[23] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[23]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[24] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[24]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[25] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[25]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[26] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[26]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[27] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[27]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[28] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[28]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[29] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[29]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @if (examSelectedImages[30] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[30]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+            <td>
+                @if (examSelectedImages[31] != null)
+                {
+                    <table class="table">
+                        <tr><td><img src="~/ExamImages/@examSelectedImages[31]" class="scan_image" /></td></tr>
+                    </table>
+                }
+            </td>
+        </tr>
+
+
+    </table>
+
+</div>
+
+} 

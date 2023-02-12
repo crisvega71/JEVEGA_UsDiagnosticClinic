@@ -1,0 +1,430 @@
+﻿@model JEVEGA_UsDiagnosticClinic.PatientExam
+
+@{
+    ViewBag.Title = "PrintExamImages";
+    Layout = "~/Views/Shared/Layout_inner_page.cshtml";
+}
+
+
+<table class="table_clinic_pageheader">
+<tr>
+    <td><h3>Exam Images</h3></td>
+    <td align="right"></td>
+</tr>
+</table>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @action = @Url.Action("PrintSelectedExamImages\\"+Model.Id, "PatientExam"), target = "_blank" }))
+{
+    @Html.AntiForgeryToken()
+
+    <table class="table table-bordered">
+    <tr>
+        <td align="right">
+            <input type="submit" value="Print Selected Images" class="btn btn-default" />
+        </td>
+    </tr>
+    </table>
+
+    <div>
+
+        <table class="table_clinic">
+            <tr><td colspan="4"><div class="line_space"></div></td></tr>
+            <tr>
+                <td><span class="report_fieldvalue_01">@Html.LabelFor(model => model.ExamDate)</span></td>
+                <td>
+                    <span class="report_fieldvalue_01">@Html.DisplayFor(model => model.formattedExamDate)</span>
+                </td>
+                <td><span class="report_fieldvalue_01">@Html.LabelFor(model => model.ExamId)</span></td>
+                <td><span class="report_fieldvalue_01">@Html.DisplayFor(model => model.ExamId)</span></td>
+            </tr>
+            <tr><td colspan="4"><div class="line_space"></div></td></tr>
+            <tr>
+                <td><span class="report_fieldvalue_01">@Html.LabelFor(model => model.PatientID)</span></td>
+                <td><span class="report_fieldvalue_01">@Html.DisplayFor(model => model.getPatientIdName)</span></td>
+
+                <td><span class="report_fieldvalue_01">@Html.LabelFor(model => model.ExamType)</span></td>
+                <td><span class="report_fieldvalue_01">@Html.DisplayFor(model => model.getExamName)</span></td>
+            </tr>
+
+            <tr><td colspan="4"><div class="line_space"></div></td></tr>
+        </table>
+
+        <div class="div_space20"></div>
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile01_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage1" id="chkImage1" /><span>&nbsp;Image 1.</span>
+                    </label>}
+                @if (ViewBag.imageFile01_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile01" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile02_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage2" id="chkImage2" /><span>&nbsp;Image 2.</span>
+                    </label>}
+                @if (ViewBag.imageFile02_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile02" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile03_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage3" id="chkImage3" /><span>&nbsp;Image 3.</span>
+                    </label>}
+                @if (ViewBag.imageFile03_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile03" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile04_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage4" id="chkImage4" /><span>&nbsp;Image 4.</span>
+                    </label>}
+                @if (ViewBag.imageFile04_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile04" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile05_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage5" id="chkImage5" /><span>&nbsp;Image 5.</span>
+                    </label>}
+                @if (ViewBag.imageFile05_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile05" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile06_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage6" id="chkImage6" /><span>&nbsp;Image 6.</span>
+                    </label>}
+                @if (ViewBag.imageFile06_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile06" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile07_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage7" id="chkImage7" /><span>&nbsp;Image 7.</span>
+                    </label>}
+                @if (ViewBag.imageFile07_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile07" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile08_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage8" id="chkImage8" /><span>&nbsp;Image 8.</span>
+                    </label>}
+                @if (ViewBag.imageFile08_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile08" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile09_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage9" id="chkImage9" /><span>&nbsp;Image 9.</span>
+                    </label>}
+                @if (ViewBag.imageFile09_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile09" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile10_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage10" id="chkImage10" /><span>&nbsp;Image 10.</span>
+                    </label>}
+                @if (ViewBag.imageFile10_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile10" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile11_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage11" id="chkImage11" /><span>&nbsp;Image 11.</span>
+                    </label>}
+                @if (ViewBag.imageFile11_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile11" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile12_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage12" id="chkImage12" /><span>&nbsp;Image 12.</span>
+                    </label>}
+                @if (ViewBag.imageFile12_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile12" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile13_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage13" id="chkImage13" /><span>&nbsp;Image 13.</span>
+                    </label>}
+                @if (ViewBag.imageFile13_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile13" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile14_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage14" id="chkImage14" /><span>&nbsp;Image 14.</span>
+                    </label>}
+                @if (ViewBag.imageFile14_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile14" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile15_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage15" id="chkImage15" /><span>&nbsp;Image 15.</span>
+                    </label>}
+                @if (ViewBag.imageFile15_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile15" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile16_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage16" id="chkImage16" /><span>&nbsp;Image 16.</span>
+                    </label>}
+                @if (ViewBag.imageFile16_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile16" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile17_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage17" id="chkImage17" /><span>&nbsp;Image 17.</span>
+                    </label>}
+                @if (ViewBag.imageFile17_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile17" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile18_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage18" id="chkImage18" /><span>&nbsp;Image 18.</span>
+                    </label>}
+                @if (ViewBag.imageFile18_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile18" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile19_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage19" id="chkImage19" /><span>&nbsp;Image 19.</span>
+                    </label>}
+                @if (ViewBag.imageFile19_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile19" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile20_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage20" id="chkImage20" /><span>&nbsp;Image 20.</span>
+                    </label>}
+                @if (ViewBag.imageFile20_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile20" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile21_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage21" id="chkImage21" /><span>&nbsp;Image 21.</span>
+                    </label>}
+                @if (ViewBag.imageFile21_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile21" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile22_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage22" id="chkImage22" /><span>&nbsp;Image 22.</span>
+                    </label>}
+                @if (ViewBag.imageFile22_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile22" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile23_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage23" id="chkImage23" /><span>&nbsp;Image 23.</span>
+                    </label>}
+                @if (ViewBag.imageFile23_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile23" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile24_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage24" id="chkImage24" /><span>&nbsp;Image 24.</span>
+                    </label>}
+                @if (ViewBag.imageFile24_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile24" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile25_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage25" id="chkImage25" /><span>&nbsp;Image 25.</span>
+                    </label>}
+                @if (ViewBag.imageFile25_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile25" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile26_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage26" id="chkImage26" /><span>&nbsp;Image 26.</span>
+                    </label>}
+                @if (ViewBag.imageFile26_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile26" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile27_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage27" id="chkImage27" /><span>&nbsp;Image 27.</span>
+                    </label>}
+                @if (ViewBag.imageFile27_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile27" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile28_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage28" id="chkImage28" /><span>&nbsp;Image 28.</span>
+                    </label>}
+                @if (ViewBag.imageFile28_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile28" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile29_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage29" id="chkImage29" /><span>&nbsp;Image 29.</span>
+                    </label>}
+                @if (ViewBag.imageFile29_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile29" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile30_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage30" id="chkImage30" /><span>&nbsp;Image 30.</span>
+                    </label>}
+                @if (ViewBag.imageFile30_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile30" class="img-responsive" />}
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                @if (ViewBag.imageFile31_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage31" id="chkImage31" /><span>&nbsp;Image 31.</span>
+                    </label>}
+                @if (ViewBag.imageFile31_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile31" class="img-responsive " />}
+            </div>
+
+            <div class="col-md-6">
+                @if (ViewBag.imageFile32_Up)
+                {
+                    <label class="container_checkbox">
+                        <input type="checkbox" name="chkImage32" id="chkImage32" /><span>&nbsp;Image 32.</span>
+                    </label>}
+                @if (ViewBag.imageFile32_Up)
+                {<img src="~/ExamImages/@ViewBag.imageFile32" class="img-responsive" />}
+            </div>
+        </div>
+
+
+        <div class="line_space"></div>
+        <table class="table table-bordered">
+            <tr>
+                <td><input type="submit" value="Print Selected Images" class="btn btn-default" /></td>
+            </tr>
+        </table>
+
+    </div>
+
+} 
